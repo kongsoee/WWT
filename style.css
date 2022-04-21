@@ -4,7 +4,7 @@ body{background-color:  #fbf8f0;}
 .container{
 
     max-width: 900px;
-    min-height: 100vh; 
+    height: 100%; 
     padding-top: 20px;
 }
 
@@ -26,9 +26,10 @@ h1{
 
 /*전체 박스 색*/
 .tem{
-    
-
+    width:100%;
+    height:100%;
     background-color: #e2e8dc ;
+    background-size: cover;
     border-radius: 50px  50px 0px 0px;
 
 }
