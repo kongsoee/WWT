@@ -1,0 +1,99 @@
+@import url(common.css);
+
+body{background-color:  #fbf8f0;}
+.container{
+
+    max-width: 900px;
+    min-height: 100vh; 
+    padding-top: 20px;
+}
+
+h1{
+    margin-left:10px;
+    font-size: 35px;
+
+}
+#loca-input{
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    border: none;
+    border: 2px solid #3c492f;
+    border-radius: 50px;
+    justify-content: center;
+    text-align: center;
+}
+
+.tem{
+    width:100%;
+    height:100%;
+    background-color: #e2e8dc ;
+    border-radius: 50px  50px 0px 0px;
+
+}
+
+
+#now-city{
+    font-size: 20px;
+    text-align: center;
+}
+
+#now-ondo{
+    margin-top: -10px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.emoji{
+    justify-content: center;
+    margin:0 auto;
+    width:100%;
+
+
+}
+.emoji div{
+    width:50%;
+    border-radius:20px;
+    background-color:white ;
+    text-align: center;
+    min-height: 130px;
+    margin:10px;
+
+}
+
+.tip{
+    width:90%;
+
+    margin:0 auto;
+}
+.tip div{
+    width:10%;
+    min-height: 150px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow:12px 12px 0px 1px #3c492f;
+    background-color:white;
+    margin:20px 0;
+}
+.tip div:first-child{margin-right: 20px;}
+.left{
+    text-align: left;
+    font-weight: 400;
+
+}
+
+.line{
+   margin-top:-22px;
+   width:60px;
+   height:5px;
+   background:white;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+}
