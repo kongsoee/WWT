@@ -4,8 +4,8 @@ body{
       background-color:  #fbf8f0;}
 .container{
     max-width: 900px;
-    height:100%; 
-    padding: 0px;
+    height:100vh; 
+    padding:20px 0px;
 
 }
 
