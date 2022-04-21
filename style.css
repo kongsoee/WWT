@@ -1,11 +1,12 @@
 @import url(common.css);
 
-body{background-color:  #fbf8f0;}
+body{
+      background-color:  #fbf8f0;}
 .container{
-
     max-width: 900px;
-    height: 100%; 
-    padding-top: 20px;
+    height:100%; 
+    padding: 0px;
+
 }
 
 h1{
@@ -27,7 +28,7 @@ h1{
 /*전체 박스 색*/
 .tem{
     width:100%;
-    height:100%;
+    height:100vh;
     background-color: #e2e8dc ;
     background-size: cover;
     border-radius: 50px  50px 0px 0px;
