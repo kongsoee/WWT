@@ -1,16 +1,31 @@
 
-const getwhather= async() =>{
-    let url = new URL(`https://api.openweathermap.org/data/2.5/weather?q=seoul&units=metric&appid=0f2a48faba1962e4b3b139d11d6c5438`);
-    let response= await fetch(url);
 
-    let data = await response.json();
-    console.log(data);
-}
+//멘트 정리
+let rainMent = '';
+let feelMent = '';
+let outerEmoji = '';
+let topcloEmoji = '';
+let btmcloEmoji = '';
 
-getwhather();
+let topcloMent = [
+    "히트텍/내복","두꺼운니트","기모후드티","기모맨투맨",
+    "니트","후드티","맨투맨",
+    "셔츠","블라우스","롱슬리브",
+    "반팔티","반팔셔츠","민소매"
+];
+let btmcloMent = [
+    "히트텍/내복","기모바지","코듀로이바지",
+    "슬랙스","청바지","면바지","롱치마",
+    "린넨바지","냉장고바지","반바지","치마"
+];
+
+
+
+
 
 //지역
-function categoryChange(e) {
+let whereLoca = '';
+ categoryChange =(e)=> {
     const state = document.getElementById("state");
   
     const gangwon = ["강릉시","동해시","삼척시","속초시","원주시","춘천시","태백시","고성군","양구군","양양군","영월군","인제군","정선군","철원군","평창군","홍천군","화천군","횡성군"];
@@ -72,7 +87,14 @@ function categoryChange(e) {
 		opt.innerHTML = add[property];
 		state.appendChild(opt);
 	}
+
+
+    
+
 }
+
+//검색기능
+
 
 //온도
 
@@ -83,22 +105,105 @@ let feelTemp = 0;
 let rainFall = 0;
 
 
-//날씨api 불러오는 함수
+//날씨 api불러오는 함수
 const getWeather = async() =>{
-    let url= new URL(`https://api.openweathermap.org/data/2.5/weather?&q=jeju&units=metric&appid=ef710ba10aec5ee8c5ce8f984a15dff0`);
+    let url= new URL(`https://api.openweathermap.org/data/2.5/weather?&q=seoul&units=metric&appid=0f2a48faba1962e4b3b139d11d6c5438`);
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
 
-    nowTemp = data.main.temp;
-    feelTemp = data.main.feels_like;
-    rainFall = data.rain;
+    nowTemp = Math.round(data.main.temp);
+    feelTemp = Math.round(data.main.feels_like);
     
-    console.log("현재온도는",Math.round(nowTemp),"°");
-    console.log("체감온도는",Math.round(feelTemp),"°");
+    if(data.rain){
+        rainFall = Object.values(data.rain);
+    }else{
+        rainFall = 0;
+    }
+    
+    cloud = data.clouds.all;
+    whereLoca = data.name;
+    minTemp = Math.round(data.main.temp_min);
+    maxTemp = Math.round(data.main.temp_max);
+    
+    console.log("현재지역은",whereLoca);
+    console.log("현재온도는",nowTemp,"°");
+    console.log("체감온도는",feelTemp,"°");
     console.log("강수량은",rainFall);
-
-
+    console.log("현재 구름은",cloud,"%");
+    console.log("오늘의 최저기온은",minTemp,"°","최고기온은",maxTemp,"°");
+    
+    render();
 }
 
 getWeather();
+
+
+
+
+
+//보여주는 함수
+const render = () =>{
+    let ondoHTML = '';
+
+    ondoHTML = `<p id="now-city">${whereLoca}은 지금!</p> 
+    <p id="now-ondo">${nowTemp}°<p id="highrow-tem">  ${minTemp}° / ${maxTemp}° </p>`;
+
+    document.getElementById("ondo-thread").innerHTML = ondoHTML;
+
+
+     //옷차림
+     let emojiMent = ["👔","👕👚","👖","🩳"];
+     if(30<nowTemp){
+         outerEmoji = "👔";
+
+     }else if(nowTemp<4){
+         outerEmoji = "🧣🧤🧥";
+     }
+     else if(4<nowTemp<=11){
+         outerEmoji = "🧥";
+     }
+ 
+ 
+
+ 
+     let topcloHTML = '';
+     topcloHTML = `<p>👔</p>
+     <p>반팔,긴팔</p>`;
+ 
+     document.querySelector(".topclo").innerHTML = topcloHTML;
+ 
+     let btmcloHTML = '';
+     btmcloHTML = `<p>👖</p>
+     <p>반바지,치마</p>`;
+ 
+     document.querySelector(".btmclo").innerHTML = btmcloHTML;
+ 
+     //강수량
+    if(rainFall == 0){
+        rainMent = "🌞 비가 오지 않아요!"
+    }else if(0<rainFall<=10){
+        rainMent = "💧 약한 비가 내려요!"
+    }else if(10<rainFall<=29){
+        rainMent = "☂ 우산 꼭 챙기세요!"
+    }else if(29<rainFall<=50){
+        rainMent = "☔ 비가 많이 와요!"
+    }else if(50<rainFall){
+        rainMent = "🌀 하늘이 미쳤어요!"
+    }
+    
+    let rainHTML = '';
+    rainHTML = `<p class="left">강수량</p>
+    <p>${rainFall}mm</p>
+    <p>${rainMent}</p>`;
+
+    document.querySelector(".rainFall").innerHTML = rainHTML;
+
+    let feelHTML = '';
+    feelHTML = `<p class="left">체감온도</p>
+    <p>${feelTemp}°</p>
+    <p>실제온도와 비슷</p>`;
+    document.querySelector(".feelOndo").innerHTML = feelHTML;
+
+}
+
