@@ -6,6 +6,7 @@ let feelMent = '';
 let outerEmoji = '';
 let topcloEmoji = '';
 let btmcloEmoji = '';
+let nowEmoji='';
 
 let topcloMent = [
     "히트텍/내복","두꺼운니트","기모후드티","기모맨투맨",
@@ -107,7 +108,7 @@ let rainFall = 0;
 
 //날씨 api불러오는 함수
 const getWeather = async() =>{
-    let url= new URL(`https://api.openweathermap.org/data/2.5/weather?&q=seoul&units=metric&appid=0f2a48faba1962e4b3b139d11d6c5438`);
+    let url= new URL(`https://api.openweathermap.org/data/2.5/weather?&q=seoul&units=metric&appid=0f2a48faba1962e4b3b139d11d6c5438&lang=kr`);
     let response = await fetch(url);
     let data = await response.json();
     console.log(data);
@@ -120,7 +121,12 @@ const getWeather = async() =>{
     }else{
         rainFall = 0;
     }
-    
+    if(data.snow){
+      snowFall = Object.values(data.snow);
+  }else{
+      snowFall = 0;
+  }
+
     cloud = data.clouds.all;
     whereLoca = data.name;
     minTemp = Math.round(data.main.temp_min);
@@ -132,7 +138,8 @@ const getWeather = async() =>{
     console.log("강수량은",rainFall);
     console.log("현재 구름은",cloud,"%");
     console.log("오늘의 최저기온은",minTemp,"°","최고기온은",maxTemp,"°");
-    
+    console.log("눈은",snowFall);
+
     render();
 }
 
@@ -144,12 +151,31 @@ getWeather();
 
 //보여주는 함수
 const render = () =>{
+  if(rainFall>0){
+    nowEmoji="🌧"
+  }else {
+    if(1<cloud<49){
+      nowEmoji="🌤"
+    }else if(cloud>50){
+      nowEmoji="🌥"
+    }else{
+      if(snow>0){
+        nowEmoji="🌨"
+    }else{nowEmoji="🌞"}
+  }
+  }
+
+
+
+
     let ondoHTML = '';
 
     ondoHTML = `<p id="now-city">${whereLoca}은 지금!</p> 
+    <div class="containerbackground">${nowEmoji}</div>
     <p id="now-ondo">${nowTemp}°<p id="highrow-tem">  ${minTemp}° / ${maxTemp}° </p>`;
 
     document.getElementById("ondo-thread").innerHTML = ondoHTML;
+
 
 
      //옷차림
@@ -164,7 +190,7 @@ const render = () =>{
          outerEmoji = "🧥";
      }
  
- 
+
 
  
      let topcloHTML = '';
@@ -205,5 +231,6 @@ const render = () =>{
     <p>실제온도와 비슷</p>`;
     document.querySelector(".feelOndo").innerHTML = feelHTML;
 
+    
 }
 

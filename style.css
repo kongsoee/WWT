@@ -76,8 +76,17 @@ h1{
     font-size: 20px;
     text-align: center;
 }
+#ondo-thread{
+    width:100%;
+    position: relative;
+}
+.containerbackground {
 
+    text-align: center;
+    font-size:50px;
+}
 #now-ondo{
+    z-index:1;
     margin-top:-10px;
     margin-bottom: -5px;
     font-size: 60px;
