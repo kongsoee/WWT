@@ -301,9 +301,9 @@ function categoryChange(e) {
         add = chungnam;
       } else if (e.value == "general16") {
         add = chungbuk;
-      } 
- 
-        
+      }
+
+      
       //하위도시 없을때
       doName = doValue.options[doValue.selectedIndex].text;
       console.log("큰지역은",doName);
@@ -324,7 +324,7 @@ function categoryChange(e) {
 	    }
 }
 
-//하위지역 값 추출
+//지역 값 추출
 const citySelect = () =>{
 
   cityName = nameValue.options[nameValue.selectedIndex].text;
@@ -341,13 +341,13 @@ const citySelect = () =>{
 
 //지역 바꾸기
 const changeCity = () =>{
-  
-  //광역시 일때
 
-  
-  //작은도시 일때
   for(i=0; i<localList.length; i++){
     if(cityName == localList[i].name){
+      nowWhere = localList[i].city;
+      whereLoca = localList[i].name;
+      break;
+    }else if(doName== localList[i].name){
       nowWhere = localList[i].city;
       whereLoca = localList[i].name;
       break;

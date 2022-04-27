@@ -24,7 +24,7 @@ const localList = [
     {name:"금천구", city:"Geumcheon-gu"},
     {name:"노원구", city:"nowon-gu"},
     {name:"도봉구", city:"dobong-gu"},
-    {name:"동대문구", city:"Dongdaemun"},//ㄴㄴ
+    {name:"동대문구", city:"Dongdaemungu"},//ㄴㄴ
     {name:"동작구", city:"dongjak-gu"},
     {name:"마포구", city:"mapo-gu"},
     {name:"서대문구", city:"seodaemun-gu"},
