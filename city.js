@@ -13,6 +13,8 @@ const localList = [
     //광주
     {name:"광주", city:"gwangju"},
 
+    
+
     //서울
     {name:"강남구", city:"Gangnam-gu"},
     {name:"강동구", city:"Gangdong-gu"},
@@ -24,7 +26,7 @@ const localList = [
     {name:"금천구", city:"Geumcheon-gu"},
     {name:"노원구", city:"nowon-gu"},
     {name:"도봉구", city:"dobong-gu"},
-    {name:"동대문구", city:"Dongdaemungu"},//ㄴㄴ
+    {name:"동대문구", city:"seoul"},//ㄴㄴ
     {name:"동작구", city:"dongjak-gu"},
     {name:"마포구", city:"mapo-gu"},
     {name:"서대문구", city:"seodaemun-gu"},
@@ -95,20 +97,20 @@ const localList = [
 
     //경상남도
     {name:"거제시", city:"Kyosai"},
-    {name:"거창군", city:"Geochang"},//ㄴㄴ
+    {name:"거창군", city:"gyeongsangnam-do"},//ㄴㄴ
     {name:"고성군", city:"goseong"},
     {name:"김해시", city:"gimhae"},
     {name:"남해군", city:"namhae"},
     {name:"마산시", city:"masan"},
     {name:"밀양시", city:"miryang"},
     {name:"사천시", city:"Seisan-ri"},
-    {name:"산청군", city:"Sancheong-gun"},//ss
+    {name:"산청군", city:"gyeongsangnam-do"},//ss
     {name:"양산시", city:"Yangsan"},
     {name:"의령군", city:"uiryeong"},
     {name:"진주시", city:"jinju"},
     {name:"창녕군", city:"changnyeong"},
     {name:"창원시", city:"changwon"},
-    {name:"통영시", city:"T’aep’ong-dong"},//ㄴㄴ
+    {name:"통영시", city:"T’aep’ong-dong"},
     {name:"하동군", city:"hadong"},
     {name:"함안군", city:"haman"},
     {name:"함양군", city:"hamyang"},
@@ -140,6 +142,7 @@ const localList = [
     {name:"포항시", city:"Sangok"},
 
     //충청남도
+    {name:"충남",city:"chungcheongnam-do"},
     {name:"공주시", city:"gongju"},
     {name:"금산군", city:"Kinzan"},
     {name:"논산시", city:"nonsan"},
@@ -157,22 +160,23 @@ const localList = [
     {name:"홍성군", city:"hongseong"},
 
     //충청북도
+    {name:"충북",city:"chungcheongbuk-do"},
     {name:"괴산군", city:"Koesan"},
     {name:"단양군", city:"Oegeomusil"},
-    {name:"보은군", city:"boeun"},//ss
+    {name:"보은군", city:"chungcheongbuk-do"},//ss
     {name:"영동군", city:"yeongdong"},
     {name:"옥천군", city:"okcheon-gun"},
     {name:"음성군", city:"umseong"},
-    {name:"증평군", city:"jeungpyeong"},//ss이 아래로 군 다 안됨
-    {name:"제천시", city:"jecheon-si"},
-    {name:"진천군", city:"jincheon"},
-    {name:"청원군", city:"cheongwon"},
-    {name:"청주시", city:"cheongju-si"},
-    {name:"충주시", city:"chungju-si"},
+    {name:"증평군", city:"chungcheongbuk-do"},//ss이 아래로 군 다 안됨
+    {name:"제천시", city:"chungcheongbuk-do"},
+    {name:"진천군", city:"chungcheongbuk-do"},
+    {name:"청원군", city:"chungcheongbuk-do"},
+    {name:"청주시", city:"chungcheongbuk-do"},
+    {name:"충주시", city:"chungcheongbuk-do"},
 
 
     //제주
-    {name:"제주시", city:"Jeju"},
+    {name:"제주", city:"Jeju"},
     {name:"서귀포시", city:"seogwipo"},//ss
 
 

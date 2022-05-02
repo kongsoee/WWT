@@ -81,7 +81,7 @@ h1{
     position: relative;
 }
 .containerbackground {
-
+    margin-top:-20px;
     text-align: center;
     font-size:50px;
 }
@@ -111,6 +111,7 @@ h1{
 
 }
 .emoji div{
+    padding-top:10px;
     margin-right: 50px;
     min-height: 130px;
     text-align: center;
@@ -121,7 +122,9 @@ h1{
     position: relative;
 }
 .emoji div:first-child{margin-right: 20px;}
-
+.cloth_emoji{
+    font-size:20px;
+}
 .cloth p{
     position:absolute;
     top: 50%;
