@@ -101,9 +101,10 @@ h1{
 }
 
 .ment{
-    margin-left:25px;
-    margin-bottom: -5px;
+    margin-left:50px;
+    margin-bottom: -2px;
     font-weight: 500;
+    font-size:20px;
 }
 .emoji{
     width:90%;
@@ -113,7 +114,7 @@ h1{
 .emoji div{
     padding-top:10px;
     margin-right: 50px;
-    min-height: 130px;
+    height: 140px;
     text-align: center;
     border-radius: 20px;
     box-shadow: rgb(60, 73, 47, 0.3) 0px 7px 29px 0px;
@@ -138,7 +139,7 @@ h1{
 }
 .tip div{
 
-    min-height: 130px;
+    min-height: 140px;
     text-align: center;
     border-radius: 20px;
     box-shadow: rgb(60, 73, 47, 0.3) 0px 7px 29px 0px;

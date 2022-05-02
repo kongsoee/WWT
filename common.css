@@ -12,7 +12,7 @@ html{
 		종류:overflow(가로,세로)/overflow-x(가로)/overflow-y(세로)
 		표현방식:auto/scroll/hidden 
 	    ************************************************************ */
-	overflow-y:scroll; /* 문서전체에 세로 스크롤바자국 항상 표시 */
+	
 	overflow-x:hidden; /* 문서전체에 가로 스크롤바자국 항상 숨김 */
 }
 
